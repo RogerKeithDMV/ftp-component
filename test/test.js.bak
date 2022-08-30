@@ -1,5 +1,6 @@
 const {log} = require('utils-nxg-cg');
 const {ftp,objectFTPOpt,objectFTPReq} = require('ftp-cg-lib');
+const fs = require('fs');
 const express = require('express');
 const app = express();
 app.use(express.json());
