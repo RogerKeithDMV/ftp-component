@@ -17,15 +17,19 @@ app.post('/', async(req, res)=>{
   properties.content=req.body.content;
   properties.nameFile=req.body.nameFile;
   properties.secure=req.body.secure;
+  properties.encoding=req.body.encoding;
+  properties.newName=req.body.newName;
+  properties.localPath=req.body.localPath;
 
   try{
     log.info("Conectando");
     const result = await ftp({data:properties},{});
-    //log.info("resultado", result);
+    log.info("resultado", result);
     res.json(result);
   }
 
   catch(err){
+    log.info("err", err);
     res.status(500).json(err);
   }
 })

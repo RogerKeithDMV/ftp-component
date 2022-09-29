@@ -6,9 +6,9 @@
   "credentials": {
   },
   "triggers": {
-    "testTriggers": {
-      "title": "Test...",
-      "main": "./lib/triggers/processTrigger.js"
+    "ftp_source": {
+      "title": "FTP Component",
+      "main": "./lib/actions/ftp.js"
     }
   },
   "actions": {

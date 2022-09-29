@@ -1,20 +1,37 @@
 {
-  "name": "ftpnodejs",
+  "name": "ftp-component",
   "version": "1.0.0",
-  "description": "",
+  "description": "FTP component",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"  
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   },
-  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RogerKeithDMV/ftp-component.git"
+  },
+  "keywords": [
+    "ftp",
+    "N3xGen",
+    "CloudGen"
+  ],
+  "author": "Daniel Maturano",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RogerKeithDMV/ftp-component/issues"
+  },
+  "homepage": "https://github.com/RogerKeithDMV/ftp-component#readme",
   "dependencies": {
     "@openintegrationhub/ferryman": "^2.1.0",
-    "@openintegrationhub/ferryman-1-7": "npm:@openintegrationhub/ferryman@^1.7.1",
+	"@openintegrationhub/ferryman-1-7": "npm:@openintegrationhub/ferryman@^1.7.1",
     "express": "^4.18.1",
-    "ftp-cg-lib": "^0.0.11-snapshot",
-    "msgbroker-nxg-cg": "^0.2.0",
+    "ftp-cg-lib": "^1.0.0",
+    "msgbroker-nxg-cg": "^0.1.0",
     "nodemon": "^2.0.19",
-    "utils-nxg-cg": "^1.0.10"
+    "utils-nxg-cg": "^1.1.0"
   }
 }
