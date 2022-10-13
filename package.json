@@ -29,7 +29,7 @@
     "@openintegrationhub/ferryman": "^2.1.0",
 	"@openintegrationhub/ferryman-1-7": "npm:@openintegrationhub/ferryman@^1.7.1",
     "express": "^4.18.1",
-    "ftp-cg-lib": "^0.0.7-snapshot",
+    "ftp-cg-lib": "^1.0.0",
     "msgbroker-nxg-cg": "^0.1.0",
     "nodemon": "^2.0.19",
     "utils-nxg-cg": "^1.1.0"
