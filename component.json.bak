@@ -1,0 +1,20 @@
+{
+  "title": "FTP Server Connection",
+  "description": "Component that execute several options inside an ftp.",
+  "docsUrl": "",
+  "buildType": "docker",
+  "credentials": {
+  },
+  "triggers": {
+    "testTriggers": {
+      "title": "Test...",
+      "main": "./lib/triggers/processTrigger.js"
+    }
+  },
+  "actions": {
+    "ftp": {
+      "title": "FTP Component",
+      "main": "./lib/actions/ftp.js"
+    }
+  }
+}

@@ -1,11 +1,11 @@
 const {log} = require('utils-nxg-cg');
-const {ftp,objectFTPOpt,objectFTPReq} = require('ftp-cg-lib');
+const {ftp,objectFTPReq} = require('ftp-cg-lib');
 const express = require('express');
 const app = express();
 app.use(express.json());
 app.post('/', async(req, res)=>{
-  let properties = {...objectFTPReq};  
-  //Basic parameters for stablish connection with sftp server.  
+  let properties = {...objectFTPReq};
+  //Basic parameters for stablish connection with sftp server.
   properties.host=req.body.host;
   properties.port=req.body.port;
   properties.username=req.body.username;
