@@ -1,4 +1,4 @@
-const {producerErrorMessage} = require('errorhandler-nxg-cg');
+const rabbitmq = require('errorhandler-nxg-cg');
 const {constants} = require('utils-nxg-cg');
 const {ftp} = require('ftp-cg-lib');
 const {emits} = constants;
@@ -16,16 +16,6 @@ const {log_levels} = constants;
 module.exports.process = async function ftpProcess(msg, cfg, snapshot = {}) {
     try {
         loging_elastic(constants.START_EXEC, log_levels.debug);
-        const default_level = log_levels.info;
-        let {data} = msg;
-        let payload = constants.PAYLOAD_NOT_ALLOWED;
-        let {uniquetransactionid, allowPayload} = cfg;
-        if (allowPayload)
-            payload = data;
-        if (!uniquetransactionid)
-            loging_elastic(payload, default_level);
-        else
-            loging_elastic(payload, default_level, uniquetransactionid);
         const md5_source = checkSumMD5(msg, cfg);
 
         if (md5_source) {
@@ -46,6 +36,6 @@ module.exports.process = async function ftpProcess(msg, cfg, snapshot = {}) {
     } catch (e) {
         this.emit(emits.error, e);
         loging_elastic(e, log_levels.error);
-        producerErrorMessage(msg, e);
+        rabbitmq.producerErrorMessage(msg,e);
     }
 };

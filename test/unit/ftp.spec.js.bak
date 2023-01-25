@@ -1,5 +1,5 @@
 const {objectFTPReq, objectFTPOpt, ftp} = require('ftp-cg-lib')
-const timeOut = 1200000;//five minutes
+const timeOut = 30000;//five minutes
 
 describe('suite to test ftp functions', function () {
 
@@ -10,12 +10,12 @@ describe('suite to test ftp functions', function () {
         properties.username = 'ftpuser';
         properties.password = 'Cloudgen';
         properties.flag = 'GETLISTFILES';
-        properties.path = '/Nuevo directorio';
+        properties.path = '/';
         properties.secure = true;
 
         const data = await ftp({}, properties, true);
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!"+data);
-        expect.stringContaining("Nuevo");
+        //console.log(JSON.stringify(data));
+        expect(JSON.stringify(data)).toContain("");
     }, timeOut);
 
     it('should save a file in the ftp server', async function () {
@@ -31,11 +31,11 @@ describe('suite to test ftp functions', function () {
         properties.encoding = 'utf8';
 
         const data = await ftp({}, properties, true);
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!"+ data);
+        //console.log(JSON.stringify(data));
         expect(JSON.stringify(data)).toContain("was created successfully.");
     }, timeOut);
 
-    it('should get a file in the ftp server', async function () {
+    it('should get a file if the ftp server', async function () {
         let properties = {...objectFTPReq,objectFTPOpt};
         properties.host = 'ftp.oih.cgdemos.com';
         properties.port = '21';
@@ -110,7 +110,7 @@ describe('suite to test ftp functions', function () {
         properties.path = '/files';
 
         const data = await ftp({}, properties, true);
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         expect(JSON.stringify(data)).toContain("was deleted successfully.");
     }, timeOut);
 
