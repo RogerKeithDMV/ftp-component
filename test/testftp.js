@@ -1,5 +1,6 @@
 const {log} = require('utils-nxg-cg');
 const {ftp,objectFTPReq} = require('ftp-cg-lib');
+const {createSum, checkSumMD5} = require("md5-node-cg-lib");
 const express = require('express');
 const app = express();
 app.use(express.json());
@@ -23,7 +24,15 @@ app.post('/', async(req, res)=>{
 
   try{
     log.info("Conectando");
-    const result = await ftp({data:properties},{});
+    //const result = await ftp({data:properties},{});
+    const {result, flag} = await ftp({data:properties},{});
+    console.log("esto es result:"+result);
+    //console.log("esto es result string:"+JSON.stringify(result));
+    const data = {
+        content: result
+    }
+
+    console.log("esto es data:"+data);
     log.info("resultado", result);
     res.json(result);
   }
