@@ -23,8 +23,8 @@ COPY ./Keypair6Delta.ppk /usr/src/app/key
 
 RUN chown -R node:node .
 
-ENV URI_RABBITMQ='amqp://guest:guest@rabbitmq-service.oih-dev-ns.svc.cluster.local'
-#ENV URI_RABBITMQ='amqp://guest:guest@rabbitmq-service.oih.svc.cluster.local'
+#ENV URI_RABBITMQ='amqp://guest:guest@rabbitmq-service.oih-dev-ns.svc.cluster.local'
+ENV URI_RABBITMQ='amqp://guest:guest@rabbitmq-service.oih.svc.cluster.local'
 
 USER node
 
